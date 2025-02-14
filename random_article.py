@@ -19,6 +19,15 @@ for element in browser.find_elements(By.TAG_NAME, "div"):
     if cl == "hatnote navigation-not-searchable ts-main":
         hatnotes.append(element)
 
+#Выводим список отобранных элементов
+i = 0
+for elem in hatnotes:
+    name = elem.find_element(By.TAG_NAME, "a").get_attribute("title")
+    print(f"{i+1} {name}")
+    i += 1
+
+input()
+
 #Выбираем случайный элемент
 hatnote = random.choice(hatnotes)
 
